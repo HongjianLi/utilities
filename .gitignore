@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+bin
+
+# Utility output files
+*.svg
