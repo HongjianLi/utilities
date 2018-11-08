@@ -17,7 +17,7 @@ int main(const int argc, const char* argv[]) {
 		return 1;
 	}
 	vector<boost::shared_ptr<ROMol>> mols;
-	SmilesMolSupplier supplier(argv[1], "\t", 0, 1, false); // Default arguments: const std::string &fileName, const std::string &delimiter=" \t", int smilesColumn=0, int nameColumn=1, bool titleLine=true, bool sanitize=true)
+	SmilesMolSupplier supplier(argv[1], "\t", 1, 0, false); // Default parameters are: const std::string &fileName, const std::string &delimiter=" \t", int smilesColumn=0, int nameColumn=1, bool titleLine=true, bool sanitize=true)
 	while (!supplier.atEnd()) {
 		mols.emplace_back(supplier.next()); // Calling next() may print "ERROR: Could not sanitize molecule on line XXXX" to stderr.
 	}

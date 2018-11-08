@@ -11,7 +11,7 @@ int main(int argc, char* argv[]) {
 		cout << argv[0] << " input.smi" << endl;
 		return 1;
 	}
-	SmilesMolSupplier supplier(argv[1], "\t", 0, 1, false); // Default arguments: const std::string &fileName, const std::string &delimiter=" \t", int smilesColumn=0, int nameColumn=1, bool titleLine=true, bool sanitize=true)
+	SmilesMolSupplier supplier(argv[1], "\t", 1, 0, false); // Default parameters are: const std::string &fileName, const std::string &delimiter=" \t", int smilesColumn=0, int nameColumn=1, bool titleLine=true, bool sanitize=true)
 	while (!supplier.atEnd()) {
 		// Obtain a pointer to the current molecule with heavy atoms only.
 		const unique_ptr<ROMol> mol_ptr(supplier.next()); // Calling next() may print "ERROR: Could not sanitize molecule on line XXXX" to stderr.
