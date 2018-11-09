@@ -21,12 +21,15 @@ int main(int argc, char* argv[]) {
 		const unique_ptr<ROMol> mol_ptr(addHs(*smi_ptr));
 		// Obtain a reference to the molecule to avoid writing *mol_ptr.
 		auto& mol = *mol_ptr;
+		// Obtain the molecule name from the smi file
+		const string name = mol.getProp<string>("_Name");
 		// Generate conformers with knowledge.
 		const auto confId = EmbedMolecule(mol, ETKDGv2); // https://github.com/rdkit/rdkit/pull/1597
 		// Check if conformers are generated.
-		if (confId == -1) continue;
-		// Obtain the molecule name from the smi file
-		const string name = mol.getProp<string>("_Name");
+		if (confId == -1) {
+			cerr << "Failed to embed: " << name << endl;
+			continue;
+		}
 		// Create output streams.
 		SDWriter writer(name + ".sdf");
 		// Write the generated conformer.
