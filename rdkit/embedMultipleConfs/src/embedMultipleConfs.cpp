@@ -26,8 +26,8 @@ int main(int argc, char* argv[]) {
 		// Generate conformers with knowledge.
 		const auto confIds = EmbedMultipleConfs(mol, 10, ETKDGv2); // https://github.com/rdkit/rdkit/pull/1597
 		// Check if conformers are generated.
+		cout << name << '\t' << confIds.size() << endl;
 		if (confIds.empty()) {
-			cerr << "Failed to embed: " << name << endl;
 			continue;
 		}
 		// Create output streams.
