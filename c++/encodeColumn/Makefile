@@ -1,6 +1,6 @@
 CC=g++
 
-encodeColumn: bin/encodeColumn-f32 bin/encodeColumn-u32 bin/encodeColumn-u64 bin/encodeColumn-u8
+encodeColumn: bin/encodeColumn-f32 bin/encodeColumn-u32 bin/encodeColumn-u64 bin/encodeColumn-u16
 
 bin/encodeColumn-f32: obj/encodeColumn-f32.o
 	${CC} -o $@ $<
@@ -11,7 +11,7 @@ bin/encodeColumn-u32: obj/encodeColumn-u32.o
 bin/encodeColumn-u64: obj/encodeColumn-u64.o
 	${CC} -o $@ $<
 
-bin/encodeColumn-u8: obj/encodeColumn-u8.o
+bin/encodeColumn-u16: obj/encodeColumn-u16.o
 	${CC} -o $@ $<
 
 obj/%.o: src/%.cpp

@@ -3,12 +3,11 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-	uint8_t g; // typedef unsigned char uint8_t
+	uint16_t g; // typedef unsigned short int uint16_t
 	const auto addr = reinterpret_cast<char*>(&g);
 	const auto size = sizeof(g);
-	for (string line; getline(cin, line);)
+	while (cin.read(addr, size))
 	{
-		g = stoul(line);
-		cout.write(addr, size);
+		cout << g << endl;
 	}
 }
