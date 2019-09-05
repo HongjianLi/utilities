@@ -23,7 +23,7 @@ int main(const int argc, const char* argv[])
 		// Get fingerprints
 		const unique_ptr<ExplicitBitVect> fp(MorganFingerprints::getFingerprintAsBitVect(mol, 2, 2048)); // mol, radius, nBits, ... https://www.rdkit.org/docs/cppapi/namespaceRDKit_1_1MorganFingerprints.html#a1bf757d66784abf5a4ebf2c869be8261;
 //		const unique_ptr<SparseIntVect<uint32_t>> fpInt(MorganFingerprints::getFingerprint(mol, 2)); // mol, radius, ... This fingerprint in SparseIntVect type will serialize to a much larger string than using ExplicitBitVect.
-//		MACCSFingerprints::getFingerprintAsBitVect(mol); // https://www.rdkit.org/docs/cppapi/namespaceRDKit_1_1MACCSFingerprints.html#a763a8cf42c312fead7cdb351e20771ef
+//		MACCSFingerprints::getFingerprintAsBitVect(mol); // https://www.rdkit.org/docs/cppapi/namespaceRDKit_1_1MACCSFingerprints.html
 //		RDKFingerprintMol(mol);     // https://www.rdkit.org/docs/cppapi/Fingerprints_8h.html
 //		LayeredFingerprintMol(mol); // https://www.rdkit.org/docs/cppapi/Fingerprints_8h.html
 //		PatternFingerprintMol(mol); // https://www.rdkit.org/docs/cppapi/Fingerprints_8h.html
