@@ -9,7 +9,7 @@ using namespace RDKit;
 int main(const int argc, const char* argv[])
 {
 	if (argc < 2) {
-		cout << argv[0] << " SD002362.sdf" << endl;
+		cout << argv[0] << " input.sdf" << endl;
 		return 1;
 	}
 	SDMolSupplier supplier(argv[1], true, false, true); // Default arguments: const std::string &fileName, bool sanitize=true, bool removeHs=true, strictParsing=true
