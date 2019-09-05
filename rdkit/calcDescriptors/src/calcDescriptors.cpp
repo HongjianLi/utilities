@@ -22,7 +22,7 @@ int main(int argc, char* argv[]) {
 		const string name = mol.getProp<string>("_Name"); // mol.getPropList() https://www.rdkit.org/docs/cppapi/classRDKit_1_1RDProps.html#ad63e121bf0725c67b9dd689b4c889bd5
 		cout
 			<< name << '\t'
-			<< MolToSmiles(mol) << '\t' // Default parameters are: const ROMol& mol, bool doIsomericSmiles = true, bool doKekule = false, int rootedAtAtom = -1,	bool canonical = true, bool allBondsExplicit = false, bool allHsExplicit = false, bool doRandom = false. https://www.rdkit.org/docs/cppapi/namespaceRDKit.html#a3636828cca83a233d7816f3652a9eb6b
+			<< MolToSmiles(mol) << '\t' // Default parameters are: const ROMol& mol, bool doIsomericSmiles = true, bool doKekule = false, int rootedAtAtom = -1, bool canonical = true, bool allBondsExplicit = false, bool allHsExplicit = false, bool doRandom = false. https://www.rdkit.org/docs/cppapi/namespaceRDKit.html#a3636828cca83a233d7816f3652a9eb6b
 			<< calcMolFormula(mol) << '\t'
 			<< mol.getNumAtoms() << '\t'
 //			<< mol.getNumHeavyAtoms() << '\t'
