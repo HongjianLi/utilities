@@ -8,7 +8,7 @@ using namespace RDKit;
 int main(const int argc, const char* argv[])
 {
 	if (argc < 3) {
-		cout << argv[0] << " input0.sdf input1.sdf" << endl;
+		cout << argv[0] << " input1.sdf input2.sdf" << endl;
 		return 1;
 	}
 	const array<unique_ptr<ROMol>, 2> mols {
