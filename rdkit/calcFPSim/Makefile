@@ -1,6 +1,6 @@
 CC=g++
 
-bin/calcFPSim: obj/calcFPSim.o
+bin/calcFPSimSdf: obj/calcFPSimSdf.o
 	${CC} -o $@ $^ -L${RDKIT_ROOT}/lib -lRDKitFingerprints -lRDKitFileParsers -lRDKitSmilesParse -lRDKitGraphMol -lRDKitDataStructs -lRDKitRDGeneral
 
 obj/%.o: src/%.cpp
