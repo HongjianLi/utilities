@@ -34,6 +34,3 @@ bin
 
 # Legacy directory
 legacy
-
-# Utility output files
-*.svg
