@@ -1,0 +1,2 @@
+ID	canonicalSMILES	molFormula	numAtoms	numHBD	numHBA	numRotatableBonds	numRings	exactMW	tPSA	clogP
+testolactone	C[C@]12CC[C@H]3[C@@H](CCC4=CC(=O)C=C[C@@]43C)[C@@H]1CCC(=O)O2	C19H24O3	22	0	3	0	4	300.173	43.37	3.5899
