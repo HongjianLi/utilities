@@ -19,8 +19,7 @@ int main(const int argc, const char* argv[])
 		// Obtain a reference to the molecule to avoid writing *mol_ptr.
 		auto& mol = *mol_ptr;
 		// Obtain the molecule name from the smi file
-		string name;
-		mol.getProp("_Name", name);
+		const string name = mol.getProp<string>("_Name"); // mol.getPropList() https://www.rdkit.org/docs/cppapi/classRDKit_1_1RDProps.html#ad63e121bf0725c67b9dd689b4c889bd5
 		// Get fingerprints
 		const unique_ptr<ExplicitBitVect> fp(MorganFingerprints::getFingerprintAsBitVect(mol, 2, 2048)); // mol, radius, nBits, ... https://www.rdkit.org/docs/cppapi/namespaceRDKit_1_1MorganFingerprints.html#a1bf757d66784abf5a4ebf2c869be8261;
 //		const unique_ptr<SparseIntVect<uint32_t>> fpInt(MorganFingerprints::getFingerprint(mol, 2)); // mol, radius, ... This fingerprint in SparseIntVect type will serialize to a much larger string than using ExplicitBitVect.
