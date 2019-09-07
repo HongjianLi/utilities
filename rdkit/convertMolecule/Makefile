@@ -1,5 +1,7 @@
 CC=g++
 
+all: bin/convertSdfToSmi
+
 bin/convertSdfToSmi: obj/convertSdfToSmi.o
 	${CC} -o $@ $< -L${RDKIT_ROOT}/lib -lRDKitMolAlign -lRDKitForceFieldHelpers -lRDKitDescriptors -lRDKitSubstructMatch -lRDKitFileParsers -lRDKitSmilesParse -lRDKitDepictor -lRDKitGraphMol -lRDKitRDGeneral
 
