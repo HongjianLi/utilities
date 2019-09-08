@@ -14,7 +14,11 @@ int main(int argc, char* argv[])
 				++numConformers;
 			} else {
 				if (id.size()) {
-					cout << id << '\t' << numConformers << endl;
+					if (numConformers == 4) {
+						cout << id << endl;
+					} else {
+						cout << id << '\t' << numConformers << endl;
+					}
 				}
 				id = line;
 				numConformers = 1;
@@ -24,6 +28,10 @@ int main(int argc, char* argv[])
 		}
 	}
 	if (id.size()) {
-		cout << id << '\t' << numConformers << endl;
+		if (numConformers == 4) {
+			cout << id << endl;
+		} else {
+			cout << id << '\t' << numConformers << endl;
+		}
 	}
 }
