@@ -1,8 +1,11 @@
 CC=g++
 
-all: bin/countMoleculesSdf
+all: bin/countMoleculesSdf bin/countMoleculesMol2
 
 bin/countMoleculesSdf: obj/countMoleculesSdf.o
+	${CC} -o $@ $<
+
+bin/countMoleculesMol2: obj/countMoleculesMol2.o
 	${CC} -o $@ $<
 
 obj/%.o: src/%.cpp
