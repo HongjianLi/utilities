@@ -17,7 +17,7 @@ int main(int argc, char* argv[]) {
 		// Obtain a pointer to the current molecule with heavy atoms only.
 		const unique_ptr<ROMol> mol_ptr(supplier.next()); // Calling next() may print "ERROR: Could not sanitize molecule on line XXXX" to stderr.
 		// Obtain a reference to the molecule to avoid writing *mol_ptr.
-		auto& mol = *mol_ptr;
+		const auto& mol = *mol_ptr;
 		// Obtain the molecule name from the smi file
 		const string name = mol.getProp<string>("_Name"); // mol.getPropList() https://www.rdkit.org/docs/cppapi/classRDKit_1_1RDProps.html#ad63e121bf0725c67b9dd689b4c889bd5
 		cout
