@@ -76,9 +76,9 @@ int main(int argc, char* argv[]) {
 		const auto name = mol.getProp<string>("_Name");
 
 		// Generate conformers with knowledge.
-		EmbedParameters params(ETKDGv2);
+		EmbedParameters params(ETKDGv2); // https://github.com/rdkit/rdkit/pull/1597
 		params.randomSeed = 209;
-		const auto confIds = EmbedMultipleConfs(mol, 4, params); // https://github.com/rdkit/rdkit/pull/1597
+		const auto confIds = EmbedMultipleConfs(mol, 4, params);
 
 		// Check if conformers are generated.
 		cout << name << '\t' << confIds.size() << endl;
