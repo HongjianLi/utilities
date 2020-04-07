@@ -24,9 +24,9 @@ int main(int argc, char* argv[]) {
 		// Obtain the molecule name from the smi file
 		const string name = mol.getProp<string>("_Name");
 		// Generate conformers with knowledge.
-		EmbedParameters params(ETKDGv2);
+		EmbedParameters params(srETKDGv3);
 		params.randomSeed = 209;
-		const auto confId = EmbedMolecule(mol, params); // https://github.com/rdkit/rdkit/pull/1597
+		const auto confId = EmbedMolecule(mol, params);
 		// Check if conformers are generated.
 		cout << name << '\t' << confId + 1 << endl;
 		if (confId == -1) {
